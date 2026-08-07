@@ -357,7 +357,7 @@ body {
 .Time {
     position: absolute;
     left: 0;
-    bottom: 110px;
+    bottom: 40px;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -387,7 +387,7 @@ body {
 .buttons-box:not(.action-box) {
     position: fixed;
     left: 0;
-    bottom: 150px;
+    bottom: 100px;
     width: 100%;
     height: 52px;
     margin: 0;
@@ -415,7 +415,7 @@ body {
 .action-box {
     position: fixed;
     left: 0;
-    bottom: 80px;
+    bottom: 30px;
     width: 100%;
     height: 52px;
     margin: 0;
