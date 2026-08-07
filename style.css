@@ -1,0 +1,476 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    font-family: "Inter", sans-serif;
+    background-image: url("images/back.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.glass-container {
+    position: relative;
+    width: 300px;
+    height: 330px;
+}
+
+.machine {
+    position: absolute;
+    width: 140px;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.pour {
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    transform: translateX(-50%);
+    display: none;
+    z-index: 1;
+}
+
+.glass {
+    position: absolute;
+    width: 210px;
+    left: 50%;
+    top: 70px;
+    transform: translateX(-50%);
+    z-index: 4;
+}
+
+.straw {
+    position: absolute;
+    width: 210px;
+    left: 50%;
+    top: 70px;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.liquid1 {
+    position: absolute;
+    width: 210px;
+    left: 50%;
+    top: 70px;
+    transform: translateX(-50%);
+    display: none;
+    z-index: 3;
+}
+
+.Time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#timer {
+    display: block;
+    width: 100%;
+    font-size: 60px;
+    font-weight: 700;
+    padding-top: 170px;
+    color: #355B3D;
+    text-align: center;
+}
+
+#status {
+    border: none;
+    color: #5D7A64;
+    font-size: 18px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.buttons-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+}
+
+.buttons {
+    outline: none;
+    padding: 10px;
+    gap: 10px;
+    min-width: 200px;
+    font-size: 18px;
+    border-radius: 15px;
+    transition: .1s ease-in-out, .4s color;
+    cursor: pointer;
+}
+
+.buttons:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.05);
+}
+
+.buttons:active {
+    transform: translateX(0.1em) translateY(0.1em);
+    box-shadow: 0 0 0 4px #EADDCA,
+                1.5px 1.5px 2.5px 1.5px rgba(0, 0, 0, 0.5);
+}
+
+#b1 {
+    background: #fdc2ae;
+    color: #b75159;
+    border: 2px dashed #b75159;
+    box-shadow: 0 0 0 4px #fdc2ae,
+                2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+#b2 {
+    background: #FFDBFD;
+    color: #b186af;
+    border: 2px dashed #b186af;
+    box-shadow: 0 0 0 4px #FFDBFD,
+                2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+#b3 {
+    background: #cbf3b7;
+    color: #61966c;
+    border: 2px dashed #61966c;
+    box-shadow: 0 0 0 4px #cbf3b7,
+                2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+#b4 {
+    background: #FFF7CD;
+    color: #bc7937;
+    border: 2px dashed #bc7937;
+    box-shadow: 0 0 0 4px #FFF7CD,
+                2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+#Start {
+    background: #d8ddff;
+    color: #4659d3;
+    border: 2px dashed #4659d3;
+    box-shadow: 0 0 0 4px #d8ddff,
+                2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+#Pause {
+    background: #fbffb0;
+    color: #636256;
+    border: 2px dashed #636256;
+    box-shadow: 0 0 0 4px #fbffb0,
+                2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+#Reset {
+    background: #FFCEE3;
+    color: #ce5589;
+    border: 2px dashed #ce5589;
+    box-shadow: 0 0 0 4px #FFCEE3,
+                2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+.customeTime {
+    display: none;
+    width: 400px;
+    height: 250px;
+    background: #b186af;
+    border-radius: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 7;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.buttons-box2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.buttons2 {
+    outline: none;
+    padding: 10px;
+    gap: 10px;
+    min-width: 100px;
+    font-size: 18px;
+    border-radius: 15px;
+    transition: .1s ease-in-out, .4s color;
+    cursor: pointer;
+}
+
+.buttons2:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.05);
+}
+
+.buttons2:active {
+    transform: translateX(0.1em) translateY(0.1em);
+    box-shadow: 0 0 0 4px #EADDCA,
+                1.5px 1.5px 2.5px 1.5px rgba(0, 0, 0, 0.5);
+}
+
+.customTimeArea {
+    height: 45px;
+    width: 220px;
+    font-size: 18px;
+    color: #ce5589;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+}
+
+#cancelTime {
+    background: #FFDBFD;
+    color: #b186af;
+    border: 2px dashed #b186af;
+    box-shadow: 0 0 0 4px #FFDBFD,
+                2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+#confirmTime {
+    background: #cbf3b7;
+    color: #61966c;
+    border: 2px dashed #61966c;
+    box-shadow: 0 0 0 4px #cbf3b7,
+                2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 600px) {
+
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: block;
+    position: relative;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100dvh - 120px);
+    margin: 0;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+}
+
+.glass-container {
+    position: absolute;
+    width: 300px;
+    height: 360px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+}
+
+.machine {
+    position: absolute;
+    width: 140px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.pour {
+    position: absolute;
+    width: auto;
+    height: 250px;
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.glass {
+    position: absolute;
+    width: 255px;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+}
+
+.straw {
+    position: absolute;
+    width: 255px;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.liquid1 {
+    position: absolute;
+    width: 255px;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.Time {
+    position: absolute;
+    left: 0;
+    bottom: 110px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 20;
+}
+
+#timer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1;
+    color: #355B3D;
+    text-align: center;
+}
+
+#status {
+    display: none;
+}
+
+.buttons-box:not(.action-box) {
+    position: fixed;
+    left: 0;
+    bottom: 150px;
+    width: 100%;
+    height: 52px;
+    margin: 0;
+    padding: 5px 8px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    z-index: 50;
+}
+
+.buttons-box:not(.action-box) .buttons {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    height: 42px;
+    min-height: 42px;
+    margin: 0;
+    padding: 0 2px;
+    font-size: 12px;
+    border-radius: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.action-box {
+    position: fixed;
+    left: 0;
+    bottom: 80px;
+    width: 100%;
+    height: 52px;
+    margin: 0;
+    padding: 3px 8px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    z-index: 50;
+}
+
+.action-box .buttons {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    height: 46px;
+    min-height: 46px;
+    margin: 0;
+    padding: 0 2px;
+    font-size: 13px;
+    border-radius: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.customeTime {
+    position: fixed;
+    width: calc(100% - 40px);
+    max-width: 350px;
+    height: 220px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    z-index: 100;
+}
+
+.buttons-box2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 5px;
+}
+
+.buttons2 {
+    min-width: 90px;
+    padding: 9px;
+    font-size: 14px;
+}
+
+.customTimeArea {
+    width: 180px;
+    height: 45px;
+    font-size: 18px;
+}
+
+}

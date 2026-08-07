@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="buttons-box preset-box">
+        <button class="buttons" id="b1">30 min</button>
+        <button class="buttons" id="b2">45 min</button>
+        <button class="buttons" id="b3">1 Hour</button>
+        <button class="buttons" id="b4">+</button>
+    </div>
+
+    <main class="container">
+        <div class="glass-container">
+            <img src="images/machine.png" alt="Glass" class="machine">
+            <img src="images/pour1.png" id="pour" class="pour">
+            <img src="images/liquid1.png" alt="liquid1" id="liquid1" class="liquid1">
+            <img src="images/straw.png" alt="Straw" class="straw">
+            <img src="images/glass.png" alt="Glass" class="glass">
+        </div>
+        <div class="Time">
+        <h1 id="timer">00:00</h1>
+        <p id="status">Ready to brew your Matcha!!!</p>
+        </div>
+       
+    </main>
+
+    <div class="buttons-box action-box">
+        <button class="buttons" id="Start">▶ Start</button>
+        <button class="buttons" id="Pause">⏸ Pause</button>
+        <button class="buttons" id="Reset">↺ Reset</button>
+    </div>
+
+    <div class="customeTime" id="customeTime">
+        <div class="buttons-box2">
+            <input type="number" class="customTimeArea" id="time" value="0" min="0" max="1440" step="1">
+        </div>
+        <div class="buttons-box2">
+            <button class="buttons2" id="cancelTime">Cancel</button>
+            <button class="buttons2" id="confirmTime">Confirm</button>
+        </div>
+    </div>
+</body>
+
+</html>
